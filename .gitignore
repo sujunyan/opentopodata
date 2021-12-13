@@ -19,3 +19,6 @@ htmlcov/
 
 # Jupyter Notebook
 .ipynb_checkpoints
+
+# others
+scripts/user.json
