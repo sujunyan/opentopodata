@@ -1,3 +1,6 @@
+
+max_locations_per_request: 1024
+
 datasets:
 - name: srtm90m
   path: data/srtm90m/
