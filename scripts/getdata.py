@@ -42,7 +42,7 @@ def convert_one_file(url):
 def convert_files(urls):
 	n_url = len(urls)
 	for iurl, url in enumerate(urls):
-		print(f"converting {iurl}/{n_url} url")
+		print(f"converting {iurl}/{n_url} ({iurl/n_url*100.0}%) url")
 		convert_one_file(url)
 
 def getdata(urls):

@@ -1,5 +1,5 @@
 
-max_locations_per_request: 1024
+max_locations_per_request: 8192
 
 datasets:
 - name: srtm90m

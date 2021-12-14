@@ -11,8 +11,12 @@ build-m1:
 run:
 	docker run --rm -it --volume $(shell pwd)/data:/app/data:ro -p $(PORT):5000 opentopodata:$(VERSION) 
 
+CON_NAME=opentopodata 
 daemon:
-	docker run --rm -itd --volume $(shell pwd)/data:/app/data:ro -p $(PORT):5000 opentopodata:$(VERSION) 
+	docker run --name $(CON_NAME) --rm -itd --volume $(shell pwd)/data:/app/data:ro -p $(PORT):5000 opentopodata:$(VERSION) 
+
+stop:
+	docker stop $(CON_NAME)
 
 test: build black-check 
 	docker run --rm -e DISABLE_MEMCACHE=1 --volume $(shell pwd)/htmlcov:/app/htmlcov opentopodata:$(VERSION) pytest --ignore=data --ignore=scripts --cov=opentopodata --cov-report html
